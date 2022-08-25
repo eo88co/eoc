@@ -1,6 +1,39 @@
-<html>
-	<body>
-		<h1>KABAN</h1>
-		<a href="/api/time">Go to /api/time</a>
-	</body>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Audio Recorder [playground]</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="app">
+        <div class="actions-holder">
+            <button id="buttonPlay" class="button button--play" disabled></button>
+            <button id="buttonRecord" class="button button--record"></button>
+            <button id="buttonPause" class="button button--pause" disabled></button>
+        </div>
+
+        <div id="trackHolder" class="tracks"></div>
+    </div>
+
+    <template id="templateTrack">
+        <div class="track">
+            <audio controls loop></audio>
+
+            <div class="track__actions">
+                <button class="track__button track__button--play"></button>
+                <button class="track__button track__button--pause" disabled></button>
+            </div>
+
+            <input type="text" class="track__name" placeholder="track name">
+
+            <button class="track__button track__button--remove"></button>
+        </div>
+    </template>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
 </html>
