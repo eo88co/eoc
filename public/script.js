@@ -6,15 +6,15 @@ let templateTrack = document.getElementById('templateTrack');
 
 let isPlayingAll = false;
 
-function send(file) {
-    var formData = new FormData();
-    formData.append('document', file, '2.ogg');
+// function send(file) {
+//     var formData = new FormData();
+//     formData.append('document', file, '2.ogg');
   
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://api.telegram.org/bot5169879858:AAGpnH_Iqil01oFxNmR2V7-V8zARtEp66iw/sendVoice?chat_id=5013012399', true);
+//     var xhr = new XMLHttpRequest();
+//     xhr.open('POST', 'https://api.telegram.org/bot5169879858:AAGpnH_Iqil01oFxNmR2V7-V8zARtEp66iw/sendVoice?chat_id=5013012399', true);
 
-    xhr.send(formData);
-  }
+//     xhr.send(formData);
+//   }
 
 const app = function(stream) {
     let mediaRecorder = new MediaRecorder(stream);
@@ -40,10 +40,10 @@ const app = function(stream) {
         chunks = [];
 
         addTrack(blob)
-        console.log(blob)
-        blob.lastModifiedDate = new Date()
-        blob.name = '2.ogg';
-        send(blob)
+        // console.log(blob)
+        // blob.lastModifiedDate = new Date()
+        // blob.name = '2.ogg';
+        // send(blob)
     };
 
     // bind actions
